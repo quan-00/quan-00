@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>zuoye5</title>
+    <style>
+        body{
+            background-image: url(222.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        img{
+            width:80px;
+            float: left;
+        }
+        .channel1,.channel2,.channel3{
+            position: relative;
+            display: inline-block;
+            padding: 5px;
+            background-color: rgb(250, 250, 250);
+            border: 1px solid rgb(231, 224, 224);
+            border-radius: 5px;
+            margin-top: 0px;
+        }
+        .ul1,.ul2,.ul3{
+            display: none;
+            position: absolute;
+            list-style: none;
+            padding: 10px 10px;
+            background-color: honeydew;
+            border: 1px solid;color: rgb(255, 255, 255);
+            min: width 10px;
+            margin-top: 10px;
+        }
+        .column1,.column2,.column3{
+            margin: 10px 10px 10px;
+            display: inline-block;
+        }
+        .ul1 li:hover{
+            display: block;
+        }
+        .column1:hover .ul1{display: block;}
+        .column2:hover .ul2{display: block;}
+        .column3:hover .ul3{display: block;}
+        a{
+            color: rgb(238, 178, 48);
+            text-decoration:none;
+        }
+        form{
+            text-align: center;
+            margin-top: 200px;
+
+        }
+        input{
+            border-color: rgb(252, 252, 252);
+            border-radius: 10px;
+            text-align:center ;
+            height: 20%;
+        }
+        li{
+            margin-top: -20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="111.jpg">
+     <div class="column1">
+         <div class="channel1">图片</div>
+         <ul class="ul1">
+            <li>
+                <a href="http//:www.111.com">风景</a><br>
+                <a href="http//:www.222.com">卡通</a><br>
+                <a href="http//:www.333.com">其他</a>
+            </li>
+        </ul>
+     </div>
+     <div class="column2">
+         <div class="channel2">视频</div>
+         <ul class="ul2">
+             <li>
+                 <a href="http//:www.333.com">国内</a><br>
+                 <a href="http//:www.444.com">国际</a><br>
+                 <a href="http//:www.555.com">其他</a>
+             </li>
+         </ul>
+     </div>
+     <div class="column3">
+         <div class="channel3">更多</div>
+         <ul class="ul3">
+             <li>
+                 <a href="http//:www.666.com">咨询</a><br>
+                 <a href="http//:www.777.com">相关</a><br>
+                 <a href="http//:www.888.com">产品</a>
+             </li>
+         </ul>
+     </div>
+     <form action="">
+        <input type="text" size="100px"><br><br>
+        <input type="button" value="搜索" style="height: 25px;width: 50px; background-color: floralwhite;">
+    </form>     
+</body>
+</html>
