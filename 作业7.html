@@ -5,25 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    body{display: block;
+        padding: auto;
+        text-align:center;
+        margin-top: 5%;
+        margin-bottom: 20%;}
+   span{color: rgb(235, 59, 59);}
+   button{width: 250px; 
+       height: 80px; 
+       border-width: 0px; 
+       border-radius: 5px; 
+       background: #686967; 
+       outline: none; 
+       color: white; 
+       font-size: 30px;}
+   div{font-size: 60px}
+   </style>
 </head>
 <body>
-    <button onclick="time1()">start</button>
-    <button onclick="stop()">stop</button>
-    <div id="time">
-    </div>
-    <script>
-        function time1(){
-            start= setInterval(uptime,1000);
-            var time=document.getElementById("time");
-            var n=0;
-            function uptime(){
-                    n++;
-                    time.innerHTML="Time passed:" + "<span>" + n + "</span>"+"s";
-                }
-            }
-        function stop(){
-                clearInterval(start);
-            }
-    </script>
+    <div>
+        <button id="starttime">计时开始</button>
+        <div id="showTime"></div>
+        </div>
+       <script>
+        var time,showTime,startBn,pauseDate;
+        var bool=false;
+        var pauseTime=0;         
+        init();
+        function init() {
+           showTime=document.getElementById("showTime");
+           starttime=document.getElementById("starttime");
+           starttime.addEventListener("click",clickHandler);
+        setInterval(animation,16);
+        }       
+        function animation() {
+        if(!bool) return;
+        var times=new Date().getTime()-time-pauseTime;
+        var seconds=Math.floor(times/1000);
+        showTime.innerHTML="Time passed:"+'<span>'+seconds+'</span>'+ "s"        
+        }         
+        function clickHandler(a) {
+        a= a || window.event;
+        if(this===starttime){
+         bool=!bool;
+        if(bool){
+         this.innerHTML="计时暂停";
+           pauseTime+=(!pauseDate ? 0 : new Date().getTime()-pauseDate);
+        if(time) return;
+         time=new Date().getTime();
+         return;
+         }         
+         this.innerHTML="计时开始";
+         pauseDate=new Date().getTime();
+         return;
+        }
+           }         
+       </script> 
 </body>
 </html>
