@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: rgb(170, 166, 159);
+        }
+    </style>    
+</head>
+<body>
+    <p>添加数组元素并逆序排列</p>
+    <script>
+        var fruits=["Banana","Orange","Apple","Mango"];
+        fruits.push("Lemon","Pinapple");
+        fruits.sort();
+        fruits.reverse();
+        document.write("<div>"+"<ul>");
+        for(var n=0;n<6;n++){
+            document.write("<li>"+fruits[n]+"</li>");
+        }
+        document.write("</ul>"+"</div>");
+    </script>
+    <p>数组排序</p>
+    <div id="n1">
+    </div>
+    <script>
+        var number=[40,100,1,5,25,10];
+            number.sort(function(a,b){return a-b});
+            document.getElementById("n1").innerHTML=number;
+    </script>
+    <p>年份排序</p>
+    <div id="n2">
+    </div>
+    <script>
+        var car=[{type:"Volvo",year:2016},
+                {type:"Saab",year:2001},
+                {type:"BMW",year:2010}];
+        car.sort(function(a,b){return a.year-b.year});
+            var x=car[0].type+":"+car[0].year+"<br>"+
+                  car[1].type+":"+car[1].year+"<br>"+
+                  car[2].type+":"+car[2].year;
+            document.getElementById("n2").innerHTML=x;  
+    </script>   
+    <p>Output array[4,9,16,25]with a style of index:value</p>
+    <div id="n3">
+    </div> 
+    <script>       
+        var array=[4,9,16,25];
+        var a1="index"+array.indexOf(4)+":"+array[0]+"</br>"+
+               "index"+array.indexOf(9)+":"+array[1]+"</br>"+
+               "index"+array.indexOf(16)+":"+array[2]+"</br>"+
+               "index"+array.indexOf(25)+":"+array[3]+"</br>";
+       
+        document.getElementById("n3").innerHTML=a1;
+
+    </script>   
+</body>
+</html>
